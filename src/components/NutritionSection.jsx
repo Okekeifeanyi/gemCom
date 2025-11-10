@@ -1,23 +1,25 @@
 // src/components/NutritionSection.jsx
 import React from "react";
+import dog from "../assets/dog.png";
 
 export default function NutritionSection() {
   return (
     <section className="w-full bg-white py-20 px-6 lg:px-16">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Left content */}
-        <div>
+      {/* Use flex-col on small screens, then change to flex-row (default) on medium screens (md) */}
+      <div className="max-w-6xl mx-auto flex flex-col items-center md:flex-row gap-12 md:items-start md:justify-center">
+    
+        <div className="text-left w-full md:w-[570px]"> 
           <h3 className="text-2xl font-semibold text-gray-900">
             Nutrition is the foundation for longer, healthier lives in dogs.
           </h3>
           <p className="mt-4 text-gray-600 leading-relaxed">
-            Based on years of veterinary and nutritional research, our formulas
-            are designed to provide the perfect balance of proteins, fats, and
-            essential nutrients for a happy, active dog.
+            Invest in your dog's future with our scientifically formulated superfood-powered supplements. Give them the nutrition they deserve and watch them thrive with vitality, energy, and the joy of a longer, healthier life.
           </p>
 
+          <p className="mt-9 font-bold space-y-2 text-gray-800"> Key Points</p>
+
           {/* Stats */}
-          <div className="mt-6 space-y-2 text-gray-800">
+          <div className="mt-3 space-y-2 text-gray-800">
             <p>
               <span className="text-orange-600 font-bold">97%</span> of dogs
               show improved coat health and vitality.
@@ -32,17 +34,16 @@ export default function NutritionSection() {
             </p>
           </div>
 
-          <button className="mt-6 px-6 py-3 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-500 transition">
+          <button className="mt-12 px-6 py-3 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-500 transition">
             Give your furry friend the gift of wholesome nutrition
           </button>
         </div>
 
-        {/* Right image */}
-        <div className="flex justify-center">
+        <div className="flex justify-center w-full md:w-[570px] mt-8 md:mt-0"> 
           <img
-            src="https://images.unsplash.com/photo-1601758123927-1960b2e69c8a?auto=format&fit=crop&w=600&q=80"
+            src={dog}
             alt="Happy dog with food"
-            className="rounded-lg shadow-md object-cover"
+            className="rounded-lg shadow-xl object-cover w-full h-auto" 
           />
         </div>
       </div>

@@ -39,7 +39,7 @@ export default function DifferenceSection() {
             <FeatureItem
               icon={premiumingredient}
               title="Premium Ingredient"
-              text="Our quality ingredients are vet-certified and responsibly sourced."
+              text="Elevating pet care with unmatched safety and quality."
             />
           </div>
 
@@ -59,12 +59,12 @@ export default function DifferenceSection() {
             <FeatureItem
               icon={madefresh}
               title="Made Fresh"
-              text="We prioritize maintaining the integrity of whole food nutrients."
+              text="We prioritize maintaining the integrity of whole foods and nutrition."
             />
             <FeatureItem
               icon={vetdeveloped}
               title="Vet Developed"
-              text="Our recipes are crafted by dog nutritionists to support lifelong health."
+              text="We raise the bar for dog nutrition, surpassing industry expectations."
             />
           </div>
         </div>
