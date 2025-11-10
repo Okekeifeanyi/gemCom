@@ -1,11 +1,18 @@
-// src/components/DifferenceSection.jsx
-import React from "react";
+import dogfood from "../assets/dogfood.png";
+import realfood from "../assets/realfood.png";
+import madefresh from "../assets/madefresh.png";
+import vetdeveloped from "../assets/vetdeveloped.png";
+import premiumingredient from "../assets/premiumingredient.png";
+import card from "../assets/card.png";
 
-function FeatureItem({ title, text }) {
+function FeatureItem({ icon, title, text }) {
   return (
-    <div className="max-w-xs">
-      <h4 className="font-semibold text-gray-900">{title}</h4>
-      <p className="text-gray-600 text-sm mt-1">{text}</p>
+    <div className="flex items-start gap-4 max-w-xs">
+      {icon && <img src={icon} alt={`${title} icon`} className="w-10 h-10 mt-1" />}
+      <div>
+        <h4 className="font-semibold text-gray-900">{title}</h4>
+        <p className="text-gray-600 text-sm mt-1">{text}</p>
+      </div>
     </div>
   );
 }
@@ -23,14 +30,16 @@ export default function DifferenceSection() {
         {/* Features and Image */}
         <div className="relative mt-12 flex flex-col lg:flex-row items-center justify-center">
           {/* Left features */}
-          <div className="flex flex-col gap-8 text-left lg:text-right lg:w-1/3">
+          <div className="flex flex-col gap-8 text-left lg:text-left lg:w-1/3">
             <FeatureItem
+              icon={realfood}
               title="Real Food"
               text="Wholesome recipes for dogs of all sizes, rich in meat and veggies."
             />
             <FeatureItem
+              icon={premiumingredient}
               title="Premium Ingredient"
-              text="Our quality ingredients are vet-certified and responsibly sourced."
+              text="Elevating pet care with unmatched safety and quality."
             />
           </div>
 
@@ -38,7 +47,7 @@ export default function DifferenceSection() {
           <div className="my-10 lg:my-0 lg:w-1/3 flex justify-center relative">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-lg border-8 border-white">
               <img
-                src="https://images.unsplash.com/photo-1604908176997-86ef1f8b3a59?auto=format&fit=crop&w=400&q=80"
+                src={dogfood}
                 alt="Dog food bowl"
                 className="w-full h-full object-cover"
               />
@@ -48,21 +57,31 @@ export default function DifferenceSection() {
           {/* Right features */}
           <div className="flex flex-col gap-8 text-left lg:w-1/3">
             <FeatureItem
+              icon={madefresh}
               title="Made Fresh"
-              text="We prioritize maintaining the integrity of whole food nutrients."
+              text="We prioritize maintaining the integrity of whole foods and nutrition."
             />
             <FeatureItem
+              icon={vetdeveloped}
               title="Vet Developed"
-              text="Our recipes are crafted by dog nutritionists to support lifelong health."
+              text="We raise the bar for dog nutrition, surpassing industry expectations."
             />
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="mt-10">
-          <button className="px-6 py-3 bg-orange-600 text-white rounded-md font-medium hover:bg-orange-500 transition">
+
+        <div className="mt-10 flex flex-col items-center"> 
+          <button className="px-6 py-3 w-[462px] bg-orange-600 text-white rounded-md font-medium hover:bg-orange-500 transition">
             Get your dog a healthy head start
           </button>
+       
+          <div className="mt-4 w-[462px]">
+            <img 
+              src={card} 
+              alt="Payment options including 30-day money back guarantee" 
+              className="w-full h-auto" 
+            />
+          </div>
         </div>
       </div>
     </section>
